@@ -1,6 +1,6 @@
-import bugImageUrl from '../../assets/bug.png'
-import ideaImageUrl from '../../assets/idea.png'
-import thoughtImageUrl from '../../assets/thought.png'
+import bugImageUrl from '../../../assets/bug.png'
+import ideaImageUrl from '../../../assets/idea.png'
+import thoughtImageUrl from '../../../assets/thought.png'
 import { useState } from "react";
 import { FeedBackTypeStep } from "./Steps/FeedBackTypeStep";
 import { FeedBackContentStep } from "./Steps/FeedBackContentStep";

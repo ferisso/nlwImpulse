@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FeedbackType, feedbackTypes } from "..";
 import { CloseButton } from "../../CloseButton";
 import { ScreenshotButton } from "../ScreenshotButton";
+import axios from "axios"
 
 interface FeedBackContentStepProp {
   feedbackType: FeedbackType;
@@ -15,8 +16,13 @@ export function FeedBackContentStep({ feedbackType, onFeedbackRestart, onFeedbac
   const [screenshot, setScreenshot] = useState<string | null>(null)
   const [comment, setComment] = useState<string>("")
 
-  function handleFeedback() {
-    console.log(comment, screenshot)
+  async function handleFeedback() {
+    const body = {
+      "type": feedbackType,
+      "comment": comment,
+      "screenshot": screenshot
+    }
+    await axios.post("http://localhost:3333/feedback", body)
     onFeedbackSend();
   }
 
